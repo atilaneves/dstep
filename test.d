@@ -315,6 +315,8 @@ private:
     {
         auto src = clang.archivePath;
         auto dest = clang.extractionPath;
+        import std.stdio;
+        writeln("extracting archive to ", dest);
 
         if (exists(dest))
             return;
@@ -365,6 +367,8 @@ private:
         {
             auto src = buildNormalizedPath(clang.extractionPath, "lib", clang.staticLibclang);
             auto dest = buildNormalizedPath(workingDirectory, clang.staticVersionedLibclang);
+            import std.stdio;
+            writeln("Extracting static libclang to ", dest);
 
             stdout.flush();
 
